@@ -169,6 +169,7 @@ export const PROJECTS = [
     tags: ["Python", "Scikit-learn", "MLflow", "Streamlit", "SHAP"],
     githubUrl: "https://github.com/sosena2/credit-risk-model",
     demoUrl: "#",
+    image: "/images/bati1.png",
   },
   {
     number: "02",
@@ -179,6 +180,7 @@ export const PROJECTS = [
     tags: ["Python", "ChromaDB", "Hugging Face", "RAG", "NLP"],
     githubUrl: "https://github.com/sosena2/rag-complaint-chatbot",
     demoUrl: "#",
+    image: "/images/creditrust.png",
   },
   {
   number: "03",
@@ -188,6 +190,7 @@ export const PROJECTS = [
   tags: ["Python", "dbt", "YOLOv8", "Dagster", "PostgreSQL", "FastAPI", "Telegram Scraping"],
   githubUrl: "https://github.com/sosena2/medical-telegram-warehouse",
   demoUrl: "#",
+  image: "/images/credit-risk-model.png",
 },
   // Frontend
   {
@@ -199,6 +202,7 @@ export const PROJECTS = [
     tags: ["React Native", "JavaScript", "Open Source"],
     githubUrl: "https://github.com/sosena2/galio",
     demoUrl: "#",
+    image: "/images/galio.png",
   },
   {
     number: "05",
@@ -209,6 +213,7 @@ export const PROJECTS = [
     tags: ["Next.js", "TypeScript"],
     githubUrl: "https://github.com/henacodes/ahemenes-frontend",
     demoUrl: "#",
+    image: "/images/ahemenes.png",
   },
   {
     number: "06",
@@ -219,6 +224,7 @@ export const PROJECTS = [
     tags: ["React"],
     githubUrl: "https://github.com/sosena2/Blog-website",
     demoUrl: "#",
+    image: "/images/blogwebsite.png",
   },
   {
     number: "07",
@@ -229,6 +235,7 @@ export const PROJECTS = [
     tags: ["Next.js", "TypeScript", "Redux"],
     githubUrl: "https://github.com/Ethio-Guide/ethio-guide-frontend",
     demoUrl: "#",
+    image: "/images/Ethioguide.png",
   },
 
   // Backend
@@ -241,6 +248,7 @@ export const PROJECTS = [
     tags: ["Node.js", "Express", "PostgreSQL", "React"],
     githubUrl: "https://github.com/sosena2/GPS_Tracking_and_EVV_Verification",
     demoUrl: "#",
+    image: "/images/evv.png",
   },
   {
     number: "09",
@@ -251,6 +259,7 @@ export const PROJECTS = [
     tags: ["Node.js", "Express", "MongoDB"],
     githubUrl: "https://github.com/Barok-y/Job-board-platform-backend",
     demoUrl: "#",
+    image: "/images/credit-risk-model.png",
   },
   {
     number: "10",
@@ -261,6 +270,7 @@ export const PROJECTS = [
     tags: ["Node.js", "Express", "MongoDB", "MERN"],
     githubUrl: "https://github.com/Pharma-flow/Backend-Node.js",
     demoUrl: "#",
+    image: "/images/pharma-flow2.png",
   },
 ];
 export const CONTACT_LINKS = [

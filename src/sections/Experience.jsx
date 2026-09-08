@@ -155,7 +155,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="px-6 sm:px-10 lg:px-20 py-24 sm:py-32 bg-cream dark:bg-ink transition-colors"
+       className="px-6 sm:px-10 lg:px-20 py-24 sm:py-32 bg-cream-alt dark:bg-ink-light transition-colors"
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">

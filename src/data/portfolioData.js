@@ -140,6 +140,7 @@ export const SKILLS = [
   "Express",
   "PostgreSQL",
   "MongoDB",
+  "MySQL",
   "Prompt engineering",
   "Git & GitHub",
   "Figma",
@@ -149,6 +150,16 @@ export const SKILLS = [
   "Pandas",
   "Scikit-learn",
   "TensorFlow",
+  "Django",
+  "React Native",
+  "Docker",
+  "Redis",
+  "Socket.io",
+  "dbt",
+  "Dagster",
+  "MLflow",
+  "REST APIs",
+  "CI/CD",
 ];
 
 export const PROJECT_CATEGORIES = [
@@ -180,7 +191,7 @@ export const PROJECTS = [
     tags: ["Python", "ChromaDB", "Hugging Face", "RAG", "NLP"],
     githubUrl: "https://github.com/sosena2/rag-complaint-chatbot",
     demoUrl: "#",
-    image: "/images/creditrust.png",
+    image: "/images/complaint-analyzer.png",
   },
   {
   number: "03",
@@ -204,19 +215,9 @@ export const PROJECTS = [
     demoUrl: "#",
     image: "/images/galio.png",
   },
+
   {
     number: "05",
-    category: "frontend",
-    title: "Ahemenes — Space Science Club Site",
-    description:
-      "Public-facing pages for Ahemenes, a university space science club, built during my time as a frontend developer with GDG on Campus AASTU. Focused on clean, accessible pages for club content and outreach.",
-    tags: ["Next.js", "TypeScript"],
-    githubUrl: "https://github.com/henacodes/ahemenes-frontend",
-    demoUrl: "#",
-    image: "/images/ahemenes.png",
-  },
-  {
-    number: "06",
     category: "frontend",
     title: "Blog Website",
     description:
@@ -227,7 +228,7 @@ export const PROJECTS = [
     image: "/images/blogwebsite.png",
   },
   {
-    number: "07",
+    number: "06",
     category: "frontend",
     title: "EthioGuide",
     description:
@@ -240,7 +241,7 @@ export const PROJECTS = [
 
   // Backend
   {
-    number: "08",
+    number: "07",
     category: "backend",
     title: "GPS Tracking & EVV Verification",
     description:
@@ -251,7 +252,7 @@ export const PROJECTS = [
     image: "/images/evv.png",
   },
   {
-    number: "09",
+    number: "08",
     category: "backend",
     title: "Job Board Platform — Backend",
     description:
@@ -262,7 +263,7 @@ export const PROJECTS = [
     image: "/images/credit-risk-model.png",
   },
   {
-    number: "10",
+    number: "09",
     category: "backend",
     title: "PharmaFlow — Backend",
     description:
@@ -274,12 +275,6 @@ export const PROJECTS = [
   },
 ];
 export const CONTACT_LINKS = [
-  {
-    label: "EMAIL",
-    value: "hello@sosenagossaye.com",
-    href: "mailto:hello@sosenagossaye.com",
-    icon: "mail",
-  },
   {
     label: "GITHUB",
     value: "@sosena2",

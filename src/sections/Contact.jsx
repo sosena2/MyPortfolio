@@ -36,27 +36,59 @@ export default function Contact() {
     e.preventDefault();
     setSubmitting(true);
 
-    // TODO(backend): wire this up to a real contact endpoint / email service.
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    try {
+      const endpoint = "https://formspree.io/f/mgaepkwz";
 
-    setSubmitting(false);
-    setSubmitted(true);
-    setForm({
-      name: "",
-      email: "",
-      message: "",
-    });
+      if (endpoint.includes("YOUR_FORM_ID")) {
+        // Simulation fallback until Formspree ID is configured
+        await new Promise((resolve) => setTimeout(resolve, 800));
+        setSubmitted(true);
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+        setSubmitting(false);
+        return;
+      }
+
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        const data = await response.json();
+        alert(data.error || "Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      console.error("Error sending message:", err);
+      alert("Network error. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
     <section
       id="contact"
-      className="px-6 sm:px-10 lg:px-20 py-24 sm:py-32 bg-cream text-ink"
+      className="px-6 sm:px-10 lg:px-20 py-24 sm:py-32 bg-ink dark:bg-cream text-cream dark:text-ink transition-colors"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="font-serif italic text-gold-dark text-sm mb-4">
+            <p className="font-serif italic text-gold dark:text-gold-dark text-sm mb-4">
               06 — Contact
             </p>
 
@@ -66,7 +98,7 @@ export default function Contact() {
               together.
             </h2>
 
-            <p className="text-slate-600 text-lg max-w-md mb-8">
+            <p className="text-slate-300 dark:text-slate-600 text-lg max-w-md mb-8">
               Open to freelance work, internships, and collaborations in web
               development and AI. I'll reply as soon as I can.
             </p>
@@ -95,25 +127,25 @@ export default function Contact() {
                     rel={
                       link.href.startsWith("http") ? "noreferrer" : undefined
                     }
-                    className="flex items-center justify-between gap-4 bg-white/60 hover:bg-white border border-ink/10 rounded-2xl px-5 py-4 transition"
+                    className="flex items-center justify-between gap-4 bg-white/5 hover:bg-white/10 dark:bg-white/60 dark:hover:bg-white border border-cream/10 dark:border-ink/10 rounded-2xl px-5 py-4 transition"
                   >
                     <div className="flex items-center gap-4">
                       <span className="w-11 h-11 rounded-full bg-gold/20 flex items-center justify-center shrink-0">
-                        <Icon className="w-4 h-4 text-gold-dark" />
+                        <Icon className="w-4 h-4 text-gold dark:text-gold-dark" />
                       </span>
 
                       <div>
-                        <p className="text-[11px] tracking-[0.15em] text-slate-500 font-mono mb-0.5">
+                        <p className="text-[11px] tracking-[0.15em] text-slate-400 dark:text-slate-500 font-mono mb-0.5">
                           {link.label}
                         </p>
 
-                        <p className="font-medium text-ink">
+                        <p className="font-medium text-cream dark:text-ink">
                           {link.value}
                         </p>
                       </div>
                     </div>
 
-                    <ArrowUpRight className="w-4 h-4 text-slate-400" />
+                    <ArrowUpRight className="w-4 h-4 text-slate-400 dark:text-slate-400" />
                   </a>
                 );
               })}
@@ -122,12 +154,12 @@ export default function Contact() {
 
           <form
             onSubmit={handleSubmit}
-            className="bg-white/60 border border-ink/10 rounded-2xl p-8 space-y-6"
+            className="bg-white/5 dark:bg-white/60 border border-cream/10 dark:border-ink/10 rounded-2xl p-8 space-y-6"
           >
             {submitted && (
               <div
                 role="status"
-                className="bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm rounded-xl px-4 py-2.5"
+                className="bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 dark:bg-emerald-50 dark:border-emerald-200 dark:text-emerald-700 text-sm rounded-xl px-4 py-2.5"
               >
                 Thanks! Your message has been sent.
               </div>
@@ -136,7 +168,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="name"
-                className="block text-[11px] tracking-[0.15em] text-slate-500 font-mono mb-2"
+                className="block text-[11px] tracking-[0.15em] text-slate-400 dark:text-slate-500 font-mono mb-2"
               >
                 NAME
               </label>
@@ -149,14 +181,14 @@ export default function Contact() {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Your name"
-                className="w-full bg-white border border-ink/15 rounded-xl px-4 py-3 text-ink placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold"
+                className="w-full bg-white/5 dark:bg-white border border-cream/15 dark:border-ink/15 rounded-xl px-4 py-3 text-cream dark:text-ink placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold"
               />
             </div>
 
             <div>
               <label
                 htmlFor="email"
-                className="block text-[11px] tracking-[0.15em] text-slate-500 font-mono mb-2"
+                className="block text-[11px] tracking-[0.15em] text-slate-400 dark:text-slate-500 font-mono mb-2"
               >
                 EMAIL
               </label>
@@ -169,14 +201,14 @@ export default function Contact() {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="you@email.com"
-                className="w-full bg-white border border-ink/15 rounded-xl px-4 py-3 text-ink placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold"
+                className="w-full bg-white/5 dark:bg-white border border-cream/15 dark:border-ink/15 rounded-xl px-4 py-3 text-cream dark:text-ink placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold"
               />
             </div>
 
             <div>
               <label
                 htmlFor="message"
-                className="block text-[11px] tracking-[0.15em] text-slate-500 font-mono mb-2"
+                className="block text-[11px] tracking-[0.15em] text-slate-400 dark:text-slate-500 font-mono mb-2"
               >
                 MESSAGE
               </label>
@@ -189,7 +221,7 @@ export default function Contact() {
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Tell me about your project or role..."
-                className="w-full bg-white border border-ink/15 rounded-xl px-4 py-3 text-ink placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold resize-none"
+                className="w-full bg-white/5 dark:bg-white border border-cream/15 dark:border-ink/15 rounded-xl px-4 py-3 text-cream dark:text-ink placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold resize-none"
               />
             </div>
 
@@ -204,7 +236,7 @@ export default function Contact() {
           </form>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 mt-16 pt-8 border-t border-ink/10 text-sm text-slate-500">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 mt-16 pt-8 border-t border-cream/10 dark:border-ink/10 text-sm text-slate-400 dark:text-slate-500">
           <p>
             © {new Date().getFullYear()} Sosena Gossaye. All rights reserved.
           </p>
@@ -217,4 +249,3 @@ export default function Contact() {
     </section>
   );
 }
-

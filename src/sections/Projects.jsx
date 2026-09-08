@@ -212,7 +212,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="px-6 sm:px-10 lg:px-20 py-24 sm:py-32 bg-cream dark:bg-ink transition-colors"
+      className="px-6 sm:px-10 lg:px-20 py-24 sm:py-32 bg-cream-alt dark:bg-ink-light transition-colors"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div

@@ -3,6 +3,7 @@
 import { Github, Linkedin, ArrowDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import heroImg from "../assets/hero2.png";
 
 const ROLES = ["Junior AI developer", "Full stack developer"];
 
@@ -144,23 +145,18 @@ export default function Hero() {
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
             className="relative w-[320px] h-80 sm:w-105 sm:h-105 rounded-full border border-dashed border-gold/40 flex items-center justify-center"
           >
-            {/* Gently floating avatar circle */}
-            <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="w-70 h-70 sm:w-95 sm:h-95 rounded-full bg-gradient-to-br from-ink-light to-ink dark:from-ink-light dark:to-black overflow-hidden flex items-center justify-center relative"
-              style={{ rotate: 0 }}
+            {/* Avatar circle with project image (still) */}
+            <div
+              className="w-70 h-70 sm:w-95 sm:h-95 rounded-full bg-gradient-to-br from-ink-light to-ink dark:from-ink-light dark:to-black overflow-hidden flex items-center justify-center relative shadow-xl border-2 border-gold/30"
             >
-              <span className="font-serif text-cream text-6xl sm:text-7xl select-none">
-                SG
-              </span>
+              <img
+                src={heroImg}
+                alt="Sosena Gossaye"
+                className="w-full h-full object-cover rounded-full"
+              />
 
               <svg
-                className="absolute inset-0 w-full h-full opacity-40"
+                className="absolute inset-0 w-full h-full opacity-40 pointer-events-none z-10"
                 viewBox="0 0 400 400"
               >
                 <motion.circle
@@ -195,21 +191,8 @@ export default function Hero() {
                   animate={{ opacity: [0.3, 1, 0.3] }}
                   transition={{ duration: 3, repeat: Infinity, delay: 1.8 }}
                 />
-
-                <path
-                  d="M20 320 Q150 260 380 180"
-                  stroke="#D9A56B"
-                  strokeWidth="0.5"
-                  fill="none"
-                />
-                <path
-                  d="M40 360 Q200 300 360 140"
-                  stroke="#D9A56B"
-                  strokeWidth="0.5"
-                  fill="none"
-                />
               </svg>
-            </motion.div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

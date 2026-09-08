@@ -7,12 +7,12 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
-      <div className="flex items-center gap-1 bg-ink/80 dark:bg-ink/80 backdrop-blur-md border border-white/10 rounded-full pl-6 pr-2 py-2 shadow-lg">
+      <div className="flex items-center gap-1 bg-white/80 dark:bg-ink/80 backdrop-blur-md border border-ink/10 dark:border-white/10 rounded-full pl-6 pr-2 py-2 shadow-lg transition-colors">
         {NAV_LINKS.map((link) => (
           <a
             key={link.href}
             href={link.href}
-            className="text-sm text-slate-200 hover:text-white px-3 py-1.5 rounded-full hover:bg-white/5 transition"
+            className="text-sm text-slate-700 hover:text-ink dark:text-slate-200 dark:hover:text-white px-3 py-1.5 rounded-full hover:bg-ink/5 dark:hover:bg-white/5 transition"
           >
             {link.label}
           </a>

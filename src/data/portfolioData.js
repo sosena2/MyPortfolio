@@ -67,7 +67,7 @@ export const EXPERIENCE = [
     title: "Full-stack Developer Intern",
     subtitle: "Abyssinia Software Solutions · Internship",
     description:
-      "Currently working on a full-stack application, developing user-facing features and backend services using React, Node.js, Express, and MySQL.",
+      "worked on a full-stack application, developing user-facing features and backend services using React, Node.js, Express, and MySQL.",
     tags: ["React", "Node.js", "Express", "MySQL"],
   },
 

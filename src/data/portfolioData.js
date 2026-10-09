@@ -7,13 +7,6 @@ export const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
-export const ABOUT_STATS = [
-  { label: "Focus", value: "Web & AI" },
-  { label: "Based in", value: "Addis Ababa" },
-  { label: "Stack", value: "React · TypeScript · Python ·  · Python" },
-  { label: "Status", value: "Open to work" },
-];
-
 export const EDUCATION = [
   {
     title: "Addis Ababa Science and Technology University",
@@ -82,7 +75,7 @@ export const EXPERIENCE = [
     period: "JUN 2026 — PRESENT",
     icon: "database",
     title: "Full-stack Developer Intern",
-    subtitle: "Innovation Center · Internship",
+    subtitle: "HPC & Big Data Analytics Center of Excellence · Internship",
     description:
       "Working on a big data project as a full-stack developer, building web interfaces with React and backend services with Django.",
     tags: ["React", "Django", "Python", "Big Data"],
@@ -164,26 +157,104 @@ export const SKILLS = [
 
 export const PROJECT_CATEGORIES = [
   { key: "all", label: "All" },
-  { key: "frontend", label: "Frontend" },
-  { key: "backend", label: "Backend" },
+  { key: "fullstack", label: "Fullstack" },
   { key: "ml-ds", label: "ML & Data Science" },
 ];
 
 export const PROJECTS = [
-  // ML & Data Science
+  // Full-Stack (frontend + backend)
   {
     number: "01",
+    category: "fullstack",
+    title: "Open Research Data Platform (ORDP)",
+    description:
+      "A team project at AASTU, run under the HPC & Big Data Analytics Center of Excellence, where researchers upload, manage, and share research datasets and others can browse and discover them. I led the frontend (React, Vite, Tailwind CSS), building the landing, browse, listing, and dataset detail pages, the Researcher Dashboard and My Datasets page with card grids, status badges, and pagination, plus the routing, collapsible sidebar, and app layout. On the Django backend, I fixed file validation and MinIO storage bugs and resolved a series of migration conflicts.",
+    tags: ["React", "Vite", "Tailwind CSS", "Django", "MinIO"],
+    githubUrl: "https://github.com/Open-Research-Data-Portal",
+    demoUrl: "https://ordp-frontend-ashen.vercel.app/",
+    image: "/images/ordp.png",
+  },
+  {
+    number: "02",
+    category: "fullstack",
+    title: "GPS Tracking & EVV Verification",
+    description:
+      "A full-stack GPS tracking and Electronic Visit Verification (EVV) system, with a React/Vite frontend and a Node.js/Express backend backed by PostgreSQL, deployed across Render, Vercel, and Supabase.",
+    tags: ["Node.js", "Express", "PostgreSQL", "React"],
+    githubUrl: "https://github.com/sosena2/GPS_Tracking_and_EVV_Verification",
+    demoUrl: "https://gps-tracking-and-evv-verification-f.vercel.app/",
+    image: "/images/evv.png",
+  },
+  {
+    number: "03",
+    category: "fullstack",
+    title: "EthioGuide",
+    description:
+      "Frontend for EthioGuide, a platform built during my internship at Eskalate to simplify navigating government procedures for citizens. Built as a frontend developer using Next.js, TypeScript, and Redux for state management.",
+    tags: ["Next.js", "TypeScript", "Redux"],
+    githubUrl: "https://github.com/Ethio-Guide/ethio-guide-frontend",
+    demoUrl: "https://ethio-guide.vercel.app/",
+    image: "/images/Ethioguide.png",
+  },
+  {
+    number: "04",
+    category: "fullstack",
+    title: "Job Board Platform — Backend",
+    description:
+      "Backend for a job board platform connecting employers and job seekers, built as a backend developer with a Node.js, Express, and MongoDB stack handling listings, applications, and user accounts.",
+    tags: ["Node.js", "Express", "MongoDB"],
+    githubUrl: "https://github.com/Barok-y/Job-board-platform-backend",
+    demoUrl: "#",
+    image: "/images/credit-risk-model.png",
+  },
+  {
+    number: "05",
+    category: "fullstack",
+    title: "PharmaFlow — Backend",
+    description:
+      "Backend services for PharmaFlow, a pharmacy-focused Mobile application, built as a backend developer handling core application logic and data management with Node.js and MongoDB.",
+    tags: ["Node.js", "Express", "MongoDB"],
+    githubUrl: "https://github.com/Pharma-flow/Backend-Node.js",
+    demoUrl: "#",
+    image: "/images/pharma-flow2.png",
+  },
+  {
+    number: "06",
+    category: "fullstack",
+    title: "Blog Website",
+    description:
+      "A personal travel-blogging platform where people write about places they've visited, sharing stories and photos from their trips.",
+    tags: ["Next.js", "Tailwind CSS", "MongoDB", "Vercel"],
+    githubUrl: "https://github.com/sosena2/Blog-website",
+    demoUrl: "https://blog-website-ten-self.vercel.app/",
+    image: "/images/blogwebsite.png",
+  },
+  {
+    number: "07",
+    category: "fullstack",
+    title: "Galio Framework — Fork Contribution",
+    description:
+      "A fork contribution to Galio, an open-source, cross-platform UI component framework for React Native, investigating and addressing compatibility issues across iOS, Android, and Web as part of a spike into the framework's cross-platform reliability.",
+    tags: ["React Native", "JavaScript", "Open Source"],
+    githubUrl: "https://github.com/sosena2/galio",
+    demoUrl: "https://galio.io/",
+    image: "/images/galio.png",
+  },
+
+  // ML & Data Science
+  {
+    number: "08",
     category: "ml-ds",
     title: "Credit Risk Model",
     description:
-      "An end-to-end credit risk model for Bati Bank, built with a customer-level train/test split and a percentile-rank composite proxy label to eliminate data leakage. The Gradient Boosting champion model reached a 0.839 ROC-AUC, with MLflow experiment tracking and a Streamlit dashboard for SHAP-based explainability.",
+      "An end-to-end credit risk model for Bati Bank data, built with a customer-level train/test split and a percentile-rank composite proxy label to eliminate data leakage. The Gradient Boosting champion model reached a 0.839 ROC-AUC, with MLflow experiment tracking and a Streamlit dashboard for SHAP-based explainability.",
     tags: ["Python", "Scikit-learn", "MLflow", "Streamlit", "SHAP"],
     githubUrl: "https://github.com/sosena2/credit-risk-model",
     demoUrl: "#",
     image: "/images/bati1.png",
   },
   {
-    number: "02",
+    number: "09",
     category: "ml-ds",
     title: "RAG Complaint Chatbot",
     description:
@@ -194,84 +265,15 @@ export const PROJECTS = [
     image: "/images/complaint-analyzer.png",
   },
   {
-  number: "03",
-  category: "ml-ds",
-  title: "Medical Telegram Warehouse",
-  description: "An end-to-end ELT pipeline that scrapes medical-business Telegram channels, models the data into a star schema with dbt, enriches images with YOLOv8 object detection, and serves it through a FastAPI layer — all orchestrated with Dagster.",
-  tags: ["Python", "dbt", "YOLOv8", "Dagster", "PostgreSQL", "FastAPI", "Telegram Scraping"],
-  githubUrl: "https://github.com/sosena2/medical-telegram-warehouse",
-  demoUrl: "#",
-  image: "/images/credit-risk-model.png",
-},
-  // Frontend
-  {
-    number: "04",
-    category: "frontend",
-    title: "Galio Framework — Fork Contribution",
+    number: "10",
+    category: "ml-ds",
+    title: "Medical Telegram Warehouse",
     description:
-      "A fork contribution to Galio, an open-source, cross-platform UI component framework for React Native, investigating and addressing compatibility issues across iOS, Android, and Web as part of a spike into the framework's cross-platform reliability.",
-    tags: ["React Native", "JavaScript", "Open Source"],
-    githubUrl: "https://github.com/sosena2/galio",
-    demoUrl: "#",
-    image: "/images/galio.png",
-  },
-
-  {
-    number: "05",
-    category: "frontend",
-    title: "Blog Website",
-    description:
-      "A personal travel-blogging platform where people write about places they've visited, sharing stories and photos from their trips.",
-    tags: ["React"],
-    githubUrl: "https://github.com/sosena2/Blog-website",
-    demoUrl: "#",
-    image: "/images/blogwebsite.png",
-  },
-  {
-    number: "06",
-    category: "frontend",
-    title: "EthioGuide",
-    description:
-      "Frontend for EthioGuide, a platform built during my internship at Eskalate to simplify navigating government procedures for citizens. Built as a frontend developer using Next.js, TypeScript, and Redux for state management.",
-    tags: ["Next.js", "TypeScript", "Redux"],
-    githubUrl: "https://github.com/Ethio-Guide/ethio-guide-frontend",
-    demoUrl: "#",
-    image: "/images/Ethioguide.png",
-  },
-
-  // Backend
-  {
-    number: "07",
-    category: "backend",
-    title: "GPS Tracking & EVV Verification",
-    description:
-      "A full-stack GPS tracking and Electronic Visit Verification (EVV) system, with a React/Vite frontend and a Node.js/Express backend backed by PostgreSQL, deployed across Render, Vercel, and Supabase.",
-    tags: ["Node.js", "Express", "PostgreSQL", "React"],
-    githubUrl: "https://github.com/sosena2/GPS_Tracking_and_EVV_Verification",
-    demoUrl: "#",
-    image: "/images/evv.png",
-  },
-  {
-    number: "08",
-    category: "backend",
-    title: "Job Board Platform — Backend",
-    description:
-      "Backend for a job board platform connecting employers and job seekers, built as a backend developer with a Node.js, Express, and MongoDB stack handling listings, applications, and user accounts.",
-    tags: ["Node.js", "Express", "MongoDB"],
-    githubUrl: "https://github.com/Barok-y/Job-board-platform-backend",
+      "An end-to-end ELT pipeline that scrapes medical-business Telegram channels, models the data into a star schema with dbt, enriches images with YOLOv8 object detection, and serves it through a FastAPI layer — all orchestrated with Dagster.",
+    tags: ["Python", "dbt", "YOLOv8", "Dagster", "PostgreSQL", "FastAPI", "Telegram Scraping"],
+    githubUrl: "https://github.com/sosena2/medical-telegram-warehouse",
     demoUrl: "#",
     image: "/images/credit-risk-model.png",
-  },
-  {
-    number: "09",
-    category: "backend",
-    title: "PharmaFlow — Backend",
-    description:
-      "Backend services for PharmaFlow, a pharmacy-focused MERN stack application, built as a backend developer handling core application logic and data management with Node.js and MongoDB.",
-    tags: ["Node.js", "Express", "MongoDB", "MERN"],
-    githubUrl: "https://github.com/Pharma-flow/Backend-Node.js",
-    demoUrl: "#",
-    image: "/images/pharma-flow2.png",
   },
 ];
 export const CONTACT_LINKS = [
@@ -284,7 +286,7 @@ export const CONTACT_LINKS = [
   {
     label: "LINKEDIN",
     value: "Connect with me",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/sosena-gossaye-37a475310/",
     icon: "linkedin",
   },
 ];
